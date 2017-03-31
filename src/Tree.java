@@ -4,8 +4,10 @@
 public class Tree {
 
     static int counter = 0;
-    private String name = "tree";
-    private double height = 1.0;
+    static final String DEFAULT_NAME =  "sprout" ;
+    static final double DEFAULT_HEIGHT = 1;
+    private String name;
+    private double height;
 
     public String getName() {
         return name;
@@ -24,14 +26,16 @@ public class Tree {
     }
 
     public Tree(String name) {
-        this.name = name;
-        counter++;
+        this(name,DEFAULT_HEIGHT);
     }
 
     public Tree(String name, double height) {
-
         this.name = name;
         this.height = height;
         counter++;
+    }
+
+    void info() {
+        System.out.println("name: " + this.name + ", height: " + this.height);
     }
 }
